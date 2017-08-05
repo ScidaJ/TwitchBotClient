@@ -1,9 +1,9 @@
-# TwitchIRC
+# TwitchBotClient
 All rights reserved © 2016 Twitch Interactive, Inc.
 
-## Light-TwitchIRC
-This is a modified version, this version is lighter sacrificing the "User" and "Channel" objects.  
-[![Download TwitchIRC](https://img.shields.io/badge/Light--TwitchIRC-v1.1-yellowgreen.svg)](https://github.com/cavariux/TwitchIRC/releases/download/Light_v1.1-Beta/Light-TwitchIRC_v1.1-Beta.jar)
+***
+
+Required Library
 
 ***
 
@@ -17,5 +17,3 @@ If You want to learn about how to use the Library visit the [Wiki](https://githu
 
 If you think you can make an optimization feel free to make a fork. In that fork make all modifications you need an then on this page go to pull requests and make a request. Thanks.
 
-***
-Please support us by sharing this library and hitting that star button. Thank you.
