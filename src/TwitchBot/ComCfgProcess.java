@@ -18,7 +18,7 @@ class ComCfgProcess {
         int splitAt;
         if(commandsFile.isEmpty) {
             String defaultCommands = "help Displays all commands available from the bot" + System.getProperty("line.separator")
-                    +"info Displays development information about the bot" + System.getProperty("line.separator");
+                    + "info Displays development information about the bot" + System.getProperty("line.separator");
             try {
                 Files.write(Paths.get(CfgFilePath), defaultCommands.getBytes());
             }

@@ -8,7 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import static TwitchBot.botCore.bot;
+import java.util.Map;
+import java.util.Set;
+
+import static TwitchBot.BotCore.bot;
 
 class ConfigGrid {
 
@@ -117,7 +120,8 @@ class ConfigGrid {
         connect.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                bot = new botCore(core.username, core.oAuthKey, core.clientKey);
+                Set commands = WindowCore.commands.keySet();
+                bot = new BotCore(core.username, core.oAuthKey, core.clientKey, commands);
                 bot.setChannel(core.channel);
                 stage.hide();
                 bot.botRun();
