@@ -47,6 +47,10 @@ public class WindowCore extends Application{
         });
     }
 
+    /**
+     * Base method for system tray icon and what is does.
+     * @throws IOException In case the icon is not there.
+     */
     private void systemTraySetup() throws IOException{
         ActionListener actionListener = new ActionListener() {
             @Override
