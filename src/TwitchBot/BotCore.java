@@ -45,6 +45,12 @@ public class BotCore extends TwitchBot{
         this.channelJoin = channel;
     }
 
+    /**
+     * Process comands given to the channel
+     * @param user The user is sent, if you put it on a String it will give you the user's nick
+     * @param channel The channel where the command was sent
+     * @param command Command sent by user
+     */
     @Override
     public void onCommand(User user, Channel channel, String command){
         if(command.equals("kill")){
