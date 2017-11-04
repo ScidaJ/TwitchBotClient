@@ -16,6 +16,12 @@ import java.util.Set;
 
 class ComGrid {
 
+    /**
+     * Constructor for command grid objects
+     * @param tabRoot The tabpane in which the grid is on
+     * @param tab The current tab the grid is stored in
+     * @param com Command cfg process
+     */
     ComGrid(TabPane tabRoot, Tab tab, ComCfgProcess com){
         GridPane gridRoot = new GridPane();
         gridSetup(gridRoot);
@@ -25,15 +31,20 @@ class ComGrid {
         displayCommands(gridRoot);
     }
 
+    /**
+     * Sets up the save commands grid block
+     * @param gridRoot The gridpane that the grid block is put on
+     * @param com Command cfg process
+     */
     private void saveCommands(GridPane gridRoot, ComCfgProcess com){
         TextField newCommand = new TextField();
         Button saveNewCom = new Button();
         saveNewCom.setText("Add");
         newCommand.setMaxWidth(150);
-        newCommand.setPromptText("(Trigger)  (Message)");
-        GridPane.setConstraints(newCommand,0,0);
+        newCommand.setPromptText("(Trigger)  (Message)"); //Show in the save commands textbox
+        GridPane.setConstraints(newCommand,0,0); //Establishing where the elements are placed in the grid
         GridPane.setConstraints(saveNewCom,0,1);
-        saveNewCom.setOnAction(new EventHandler<ActionEvent>() {
+        saveNewCom.setOnAction(new EventHandler<ActionEvent>() { //Action on button press
             @Override
             public void handle(ActionEvent event) {
                 SaveCommand.saveNewCom(newCommand.getText());
@@ -46,9 +57,13 @@ class ComGrid {
         gridRoot.getChildren().add(saveNewCom);
     }
 
+    /**
+     * Method to create new window to display commands on
+     * @param gridRoot Gridpane for the button to be placed on
+     */
     private void displayCommands(GridPane gridRoot){
         Button commands = new Button("Show Commands");
-        commands.setOnAction(new EventHandler<ActionEvent>() {
+        commands.setOnAction(new EventHandler<ActionEvent>() { //Action on button press
             @Override
             public void handle(ActionEvent event) {
                Stage stage = new Stage();
@@ -64,13 +79,17 @@ class ComGrid {
         gridRoot.getChildren().add(commands);
     }
 
+    /**
+     * Converts the commands to a string to be displayed
+     * @param showCommands Pane in which to put the commands
+     */
     private void commandsToText(BorderPane showCommands){
         String comText = "";
         Label commands = new Label();
         Set<String> keysSet = WindowCore.commands.keySet();
         String[] keys = keysSet.toArray(new String[keysSet.size()]);
         Arrays.sort(keys);
-        for(String key: keys){
+        for(String key: keys){ //For each loop
             comText += key + ":\t\t" + WindowCore.commands.get(key) + "\n";
         }
         commands.setText(comText);

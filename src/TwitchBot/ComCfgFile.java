@@ -10,8 +10,15 @@ class ComCfgFile {
             "AppData" + File.separator + "Roaming" + File.separator + "Twitch Bot"
             + File.separator + "cfg" + File.separator + "twitchbotcommands.cfg";
 
+    /**
+     * Default constructor for access of files and isEmpty attribute
+     */
     ComCfgFile(){}
 
+    /**
+     * Either creates a new file or verifies that it exists
+     * @return returns the cfg file
+     */
     File comFileHandler(){
         File cfg = new File(CfgFilePath);
         if(!cfg.exists()){

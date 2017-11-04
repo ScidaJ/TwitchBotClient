@@ -20,7 +20,7 @@ class SaveConfig {
         String text = "username:" + username + System.getProperty("line.separator") + "oAuthKey:" +
                 oAuth + System.getProperty("line.separator") + "channel:" + channel +
                 System.getProperty("line.separator") + "clientKey:" + clientKey;
-        try {
+        try { //Attempting to write to .cfg file in Appdata
             Files.write(Paths.get(CfgFilePath), text.getBytes());
         }
         catch(Exception e){

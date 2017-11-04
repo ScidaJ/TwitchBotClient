@@ -154,6 +154,11 @@ class ConfigGrid {
         gridRoot.getChildren().add(save);
     }
 
+    /**
+     * Generates and returns a string array that contains the updated fields to save
+     * @param core The core Config process to grab the unchanged fields
+     * @return An updated string that contains the updated fields to update
+     */
     private String[] saveFields(CoreCfgProcess core){
         String[] updated = new String[4];
         if(usernameText.getText().equals(core.username) || usernameText.getText().isEmpty()){

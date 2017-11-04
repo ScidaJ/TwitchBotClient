@@ -75,6 +75,11 @@ public class WindowCore extends Application{
         }
     }
 
+    /**
+     * Creates the tabpane
+     * @param primaryStage For adding the tabpane to the stage
+     * @param root Adding it to the group. Not sure what this does as I'm adding this about ~3 months after writing this method
+     */
     private void gridTabSetup(Stage primaryStage, Group root){
         CoreCfgProcess core = new CoreCfgProcess();
         core.getConfig();

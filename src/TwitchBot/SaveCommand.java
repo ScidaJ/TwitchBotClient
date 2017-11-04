@@ -13,7 +13,7 @@ class SaveCommand {
             command = command.substring(1);
         }
         command += System.getProperty("line.separator");
-        try{
+        try{ //Attempting to write to .cfg file in Appdata
             Files.write(Paths.get(CfgFilePath), command.getBytes(), StandardOpenOption.APPEND);
         }
         catch(Exception e){
