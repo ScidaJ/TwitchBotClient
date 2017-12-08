@@ -3,8 +3,7 @@ All rights reserved © 2016 Twitch Interactive, Inc.
 
 ***
 
-Library Required to make changes and edits to files in this Repo without a metric shedload of errors.
-[Required Library](https://github.com/cavariux/twitchirc)
+[Library Required](https://github.com/cavariux/twitchirc) to make changes and edits to files in this Repo without a metric shedload of errors.
 
 ***
 
