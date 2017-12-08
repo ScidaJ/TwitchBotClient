@@ -4,7 +4,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-class CoreCfgFile {
+class MainConfigFile {
+
     boolean isDefault = true;
     private static String CfgDirPath = System.getProperty("user.home") + File.separator + "AppData"
             + File.separator + "Roaming" + File.separator + "Twitch Bot"
@@ -13,7 +14,7 @@ class CoreCfgFile {
             "AppData" + File.separator + "Roaming" + File.separator + "Twitch Bot"
             + File.separator + "cfg" + File.separator + "twitchbotcore.cfg";
 
-    CoreCfgFile(){}
+    MainConfigFile(){}
 
     /**
      * Checks if file is present, if not, then it creates it.

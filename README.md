@@ -3,7 +3,8 @@ All rights reserved © 2016 Twitch Interactive, Inc.
 
 ***
 
-Required Library
+Library Required to make changes and edits to files in this Repo without a metric shedload of errors.
+[Required Library](https://github.com/cavariux/twitchirc)
 
 ***
 
@@ -15,5 +16,5 @@ If You want to learn about how to use the Library visit the [Wiki](https://githu
 
 ***
 
-If you think you can make an optimization feel free to make a fork. In that fork make all modifications you need an then on this page go to pull requests and make a request. Thanks.
+If you think you can make an optimization feel free to make a fork. In that fork make all modifications you need and then on this page go to pull requests and make a request. Thanks.
 

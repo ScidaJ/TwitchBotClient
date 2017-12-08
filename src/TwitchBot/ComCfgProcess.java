@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
-import static TwitchBot.ComCfgFile.CfgFilePath;
+import static TwitchBot.CommandCfgFile.CfgFilePath;
 
 
 class ComCfgProcess {
@@ -17,10 +17,10 @@ class ComCfgProcess {
      *  then it creates a skeleton file
      * @return A map of commands and their keys
      */
-    void getCommands(){
-        ComCfgFile commandsFile = new ComCfgFile();
+    static void getCommands(){
+        CommandCfgFile commandsFile = new CommandCfgFile();
         commandsFile.comFileHandler();
-        Map<String, String> commands = new HashMap<>();
+        Map<String, String> commandsMap = new HashMap<>();
         String key, com;
         int splitAt;
         if(commandsFile.isEmpty) { //Checks if the cfg file is empty
@@ -40,9 +40,9 @@ class ComCfgProcess {
                 splitAt = string.indexOf(' ');
                 key = string.substring(0, splitAt);
                 com = string.substring(splitAt + 1);
-                commands.put(key, com);
+                commandsMap.put(key, com);
             }
-            this.commands = commands;
+            commands = commandsMap;
         }
         catch(Exception e){
             e.printStackTrace();

@@ -3,7 +3,7 @@ package TwitchBot;
 import java.io.File;
 
 
-class ComCfgFile {
+class CommandCfgFile {
 
     boolean isEmpty = true;
     static String CfgFilePath = System.getProperty("user.home") + File.separator +
@@ -13,7 +13,7 @@ class ComCfgFile {
     /**
      * Default constructor for access of files and isEmpty attribute
      */
-    ComCfgFile(){}
+    CommandCfgFile(){}
 
     /**
      * Either creates a new file or verifies that it exists

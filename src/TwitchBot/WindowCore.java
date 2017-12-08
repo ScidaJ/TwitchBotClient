@@ -80,7 +80,7 @@ public class WindowCore extends Application{
      * @param root Adding it to the group. Not sure what this does as I'm adding this about ~3 months after writing this method
      */
     private void gridTabSetup(Stage primaryStage, Group root){
-        CoreCfgProcess core = new CoreCfgProcess();
+        MainCfgProcessing core = new MainCfgProcessing();
         core.getConfig();
         ComCfgProcess com = new ComCfgProcess();
         TabPane tabRoot = new TabPane();
@@ -90,8 +90,8 @@ public class WindowCore extends Application{
         Tab gridPane2 = new Tab();
         gridPane2.setText("Commands");
         tabRoot.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-        ConfigGrid gridConfig = new ConfigGrid(primaryStage , tabRoot, gridPane1, core);
-        ComGrid gridCommand = new ComGrid(tabRoot, gridPane2, com);
+        ConfigGridSetup gridConfig = new ConfigGridSetup(primaryStage , tabRoot, gridPane1, core);
+        CommandGridSetup gridCommand = new CommandGridSetup(tabRoot, gridPane2, com);
         root.getChildren().add(tabRoot);
     }
 

@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.util.Arrays;
 import java.util.Set;
 
-class ComGrid {
+class CommandGridSetup {
 
     /**
      * Constructor for command grid objects
@@ -22,7 +22,8 @@ class ComGrid {
      * @param tab The current tab the grid is stored in
      * @param com Command cfg process
      */
-    ComGrid(TabPane tabRoot, Tab tab, ComCfgProcess com){
+    CommandGridSetup(TabPane tabRoot, Tab tab, ComCfgProcess com){
+        ComCfgProcess.getCommands();
         GridPane gridRoot = new GridPane();
         gridSetup(gridRoot);
         tab.setContent(gridRoot);
@@ -48,7 +49,7 @@ class ComGrid {
             @Override
             public void handle(ActionEvent event) {
                 SaveCommand.saveNewCom(newCommand.getText());
-                ComCfgProcess.commands = ComCfgProcess.commands;
+                ComCfgProcess.getCommands();
                 gridRoot.getChildren().remove(2);
                 displayCommands(gridRoot);
             }

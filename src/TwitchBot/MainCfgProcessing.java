@@ -4,9 +4,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
-import static TwitchBot.CoreCfgFile.CfgFilePath;
+import static TwitchBot.MainConfigFile.CfgFilePath;
 
-class CoreCfgProcess {
+class MainCfgProcessing {
 
     /**
      * In program storage of username, oAuthKey, channel, and clientKey.
@@ -16,7 +16,7 @@ class CoreCfgProcess {
     /**
      * Empty constructor for usable methods.
      */
-    CoreCfgProcess(){}
+    MainCfgProcessing(){}
 
     /**
      * Process data from cfg file that CoreCfgFile class returns
@@ -24,7 +24,7 @@ class CoreCfgProcess {
     void getConfig(){
         String val;
         int splitAt;
-        CoreCfgFile file = new CoreCfgFile();
+        MainConfigFile file = new MainConfigFile();
         file.coreFileHandler();
         if(file.isDefault){
             this.username = "Bot Account";

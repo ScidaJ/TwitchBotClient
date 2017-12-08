@@ -13,7 +13,7 @@ import java.util.Set;
 
 import static TwitchBot.BotCore.bot;
 
-class ConfigGrid {
+class ConfigGridSetup {
 
     private TextField usernameText;
     private TextField oAuthText;
@@ -26,7 +26,7 @@ class ConfigGrid {
      * @param tab Tab that the content is added to
      * @param core Core CFG file process, needed to fill textfields.
      */
-    ConfigGrid(Stage stage, TabPane tabRoot, Tab tab, CoreCfgProcess core){
+    ConfigGridSetup(Stage stage, TabPane tabRoot, Tab tab, MainCfgProcessing core){
         GridPane gridRoot = new GridPane();
         gridSetup(gridRoot);
         tab.setContent(gridRoot);
@@ -54,7 +54,7 @@ class ConfigGrid {
      * @param gridRoot Base GridPane that the field and text are being configured for
      * @param core Core file that is used to fill textfield by default
      */
-    private void usernameText(GridPane gridRoot, CoreCfgProcess core){
+    private void usernameText(GridPane gridRoot, MainCfgProcessing core){
         Label username = new Label("Username:");
         usernameText = new TextField();
         usernameText.setPromptText(core.username);
@@ -69,7 +69,7 @@ class ConfigGrid {
      * @param gridRoot Base GridPane that the field and text are being configured for
      * @param core Core file that is used to fill textfield by default
      */
-    private void oauthText(GridPane gridRoot, CoreCfgProcess core){
+    private void oauthText(GridPane gridRoot, MainCfgProcessing core){
         Label oAuth = new Label("oAuth Key");
         oAuthText = new TextField();
         oAuthText.setPromptText(core.oAuthKey);
@@ -84,7 +84,7 @@ class ConfigGrid {
      * @param gridRoot Base GridPane that the field and text are being configured for
      * @param core Core file that is used to fill textfield by default
      */
-    private void channelText(GridPane gridRoot, CoreCfgProcess core){
+    private void channelText(GridPane gridRoot, MainCfgProcessing core){
         Label channel = new Label("Channel");
         channelText = new TextField();
         channelText.setPromptText(core.channel);
@@ -99,7 +99,7 @@ class ConfigGrid {
      * @param gridRoot Base GridPane that the field and text are being configured for
      * @param core Core file that is used to fill textfield by default
      */
-    private void clientKeyText(GridPane gridRoot, CoreCfgProcess core){
+    private void clientKeyText(GridPane gridRoot, MainCfgProcessing core){
         Label clientKey = new Label("Client Key");
         clientKeyText = new TextField();
         clientKeyText.setPromptText(core.clientKey);
@@ -114,7 +114,7 @@ class ConfigGrid {
      * @param gridRoot Base GridPane that the button is being configured for
      * @param core Core file that is used to pass information to botCore class
      */
-    private void connectButton(Stage stage , GridPane gridRoot, CoreCfgProcess core){
+    private void connectButton(Stage stage , GridPane gridRoot, MainCfgProcessing core){
         Button connect = new Button();
         connect.setText("Connect");
         connect.setOnAction(new EventHandler<ActionEvent>() {
@@ -136,7 +136,7 @@ class ConfigGrid {
      * @param gridRoot Base GridPane that the button is being configured for
      * @param core Core file object that refreshed the information in the bot after config is saved
      */
-    private void saveConfigButton(GridPane gridRoot, CoreCfgProcess core){
+    private void saveConfigButton(GridPane gridRoot, MainCfgProcessing core){
         Button save = new Button();
         save.setText("Save Config");
         save.setOnAction(new EventHandler<ActionEvent>() {
@@ -159,7 +159,7 @@ class ConfigGrid {
      * @param core The core Config process to grab the unchanged fields
      * @return An updated string that contains the updated fields to update
      */
-    private String[] saveFields(CoreCfgProcess core){
+    private String[] saveFields(MainCfgProcessing core){
         String[] updated = new String[4];
         if(usernameText.getText().equals(core.username) || usernameText.getText().isEmpty()){
             updated[0] = core.username;

@@ -3,7 +3,7 @@ package TwitchBot;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static TwitchBot.CoreCfgFile.CfgFilePath;
+import static TwitchBot.MainConfigFile.CfgFilePath;
 
 
 class SaveConfig {
