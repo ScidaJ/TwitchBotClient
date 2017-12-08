@@ -20,7 +20,6 @@ import java.util.Map;
 public class WindowCore extends Application{
 
     TrayIcon trayIcon = null;
-    static Map<String, String> commands;
 
     /**
      * Base method for Window
@@ -84,7 +83,6 @@ public class WindowCore extends Application{
         CoreCfgProcess core = new CoreCfgProcess();
         core.getConfig();
         ComCfgProcess com = new ComCfgProcess();
-        commands = com.getCommands();
         TabPane tabRoot = new TabPane();
         Tab gridPane1 = new Tab();
         tabRoot.setMaxWidth(600);

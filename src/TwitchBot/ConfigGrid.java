@@ -120,7 +120,7 @@ class ConfigGrid {
         connect.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Set commands = WindowCore.commands.keySet();
+                Set commands = ComCfgProcess.commands.keySet();
                 bot = new BotCore(core.username, core.oAuthKey, core.clientKey, commands);
                 bot.setChannel(core.channel);
                 stage.hide();

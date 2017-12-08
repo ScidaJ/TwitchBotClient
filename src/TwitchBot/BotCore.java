@@ -64,7 +64,7 @@ public class BotCore extends TwitchBot{
             String[] tempCommands = commands.toArray(new String[commands.size()]);
             for (int i = 0; i < commands.size(); i++) {
                 if (!tempCommands[i].equals("help")) {
-                    message += "!" + tempCommands[i] + " " + WindowCore.commands.get(tempCommands[i]) + " | ";
+                    message += "!" + tempCommands[i] + " " + ComCfgProcess.commands.get(tempCommands[i]) + " | ";
                 }
             }
             this.sendMessage(message, channel);
@@ -74,7 +74,7 @@ public class BotCore extends TwitchBot{
                     "to see the GitHub repository of the project. If you have any suggestions, or encounter any bugs, please let" +
                     " Jacob know. Or, if you want to make your own changes, do not hesitate to make a fork.", channel);
         } else if(commands.contains(command)){
-            this.sendMessage(WindowCore.commands.get(command), channel);
+            this.sendMessage(ComCfgProcess.commands.get(command), channel);
         }
     }
 

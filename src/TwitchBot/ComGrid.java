@@ -48,7 +48,7 @@ class ComGrid {
             @Override
             public void handle(ActionEvent event) {
                 SaveCommand.saveNewCom(newCommand.getText());
-                WindowCore.commands = com.getCommands();
+                ComCfgProcess.commands = ComCfgProcess.commands;
                 gridRoot.getChildren().remove(2);
                 displayCommands(gridRoot);
             }
@@ -86,11 +86,11 @@ class ComGrid {
     private void commandsToText(BorderPane showCommands){
         String comText = "";
         Label commands = new Label();
-        Set<String> keysSet = WindowCore.commands.keySet();
+        Set<String> keysSet = ComCfgProcess.commands.keySet();
         String[] keys = keysSet.toArray(new String[keysSet.size()]);
         Arrays.sort(keys);
         for(String key: keys){ //For each loop
-            comText += key + ":\t\t" + WindowCore.commands.get(key) + "\n";
+            comText += key + ":\t\t" + ComCfgProcess.commands.get(key) + "\n";
         }
         commands.setText(comText);
         commands.setWrapText(true);

@@ -10,12 +10,14 @@ import static TwitchBot.ComCfgFile.CfgFilePath;
 
 class ComCfgProcess {
 
+    static Map<String,String> commands;
+
     /**
      * Retrieves the twitchbotcommands.cfg file and reads the commands contained in it. If it does not exist
      *  then it creates a skeleton file
      * @return A map of commands and their keys
      */
-    Map getCommands(){
+    void getCommands(){
         ComCfgFile commandsFile = new ComCfgFile();
         commandsFile.comFileHandler();
         Map<String, String> commands = new HashMap<>();
@@ -40,11 +42,10 @@ class ComCfgProcess {
                 com = string.substring(splitAt + 1);
                 commands.put(key, com);
             }
-            return commands;
+            this.commands = commands;
         }
         catch(Exception e){
             e.printStackTrace();
-            return null;
         }
     }
 }
